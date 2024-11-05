@@ -49,22 +49,22 @@ module.exports = {
         customGroups: {
           value: {
             assets: [
-              '~/assets/**',
+              './assets/**',
             ],
             components: [
-              '~/components/**/*.vue',
+              './components/**/*.vue',
             ],
             enums: [
-              '~/types/**',
+              './types/**',
             ],
             icons: [
-              '~icons/**',
+              './icons/**',
             ],
             mocks: [
-              '~/mocks/**',
+              './mocks/**',
             ],
             types: [
-              '~/components/**/types',
+              './components/**/types',
             ],
           },
         },

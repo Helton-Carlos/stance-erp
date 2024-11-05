@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const test = ref<string>('test')
 </script>
 
 <template>
   <div>
     <n-space>
-      <n-button>Default</n-button>
-      
+      <n-card :title="test" class="shadow mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus excepturi, cumque incidunt debitis vero nisi sed dicta nam? Enim libero quos nisi, 
+        incidunt odio nesciunt minima maxime quae. Eligendi, error.
+      </n-card>
+    </n-space>
+   
+    <n-space>
       <n-button type="tertiary">
         Tertiary
       </n-button>

@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import {RouterLink, RouterView} from 'vue-router';
-import { userLogin } from './stores/login';
-import { storeToRefs } from 'pinia';
-import TitleHeader from './components/TittleHeader/TittleHeader.vue';
-
-const store = userLogin();
-const { user } = storeToRefs(store)
+import {RouterView} from 'vue-router';
+import STHeader from './components/STHeader/STHeader.vue';
+import STMetaHeader from './components/STMetaHeader/STMetaHeader.vue';
 </script>
 
 <template>
   <div>
-    <router-link to="/" style="padding: 20px;">index</router-link>
-    <router-link to="/cadastrar-cliente">cadastrar-cliente</router-link>
+    <div>
+      <STHeader />
+    </div>
+
+    <div class="w-80 mt-2">
+      <STMetaHeader />
+      
+      <RouterView  />
+    </div>
   </div>
-  
-  <TitleHeader />
-  <h2>{{ user }}</h2>
-  <RouterView  />
 </template>
+
+
+<style lang="scss">
+  @use "./assets/scss/global.scss";
+</style>

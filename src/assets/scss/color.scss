@@ -1,3 +1,42 @@
-$color-primary: #46635b;
-$color-secondary: #a1f813;
-$color-tertiary: #ffc552;
+$color-primary: #01253D;
+$color-positive: #46DB53;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray: #f1f7fc;
+$color-yellow-light: #FDFBF0;
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-positive {
+  color: $color-positive;
+}
+
+.text-black {
+  color: $color-black;
+}
+
+.text-white {
+  color: $color-white;
+}
+
+.text-yellow {
+  color: $color-yellow-light;
+}
+
+.text-gray {
+  color: $color-gray;
+}
+
+.bg-gray {
+  background-color: $color-gray;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+}
+
+.bg-positive {
+  background-color: $color-positive;
+}

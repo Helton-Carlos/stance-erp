@@ -1,4 +1,5 @@
-@use './flex.scss';
-@use './space.scss';
-@use './color.scss';
-@use './text.scss';
+@forward  './flex.scss';
+@forward  './space.scss';
+@forward  './color.scss';
+@forward  './text.scss';
+@forward  './components.scss';

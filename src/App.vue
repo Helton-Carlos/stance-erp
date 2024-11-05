@@ -2,6 +2,7 @@
 import {RouterLink, RouterView} from 'vue-router';
 import { userLogin } from './stores/login';
 import { storeToRefs } from 'pinia';
+import TitleHeader from './components/TittleHeader/TittleHeader.vue';
 
 const store = userLogin();
 const { user } = storeToRefs(store)
@@ -9,24 +10,11 @@ const { user } = storeToRefs(store)
 
 <template>
   <div>
-    <router-link to="/" style="padding: 20px;">Go to Foo</router-link>
-    <router-link to="/about">Go to Bar</router-link>
+    <router-link to="/" style="padding: 20px;">index</router-link>
+    <router-link to="/cadastrar-cliente">cadastrar-cliente</router-link>
   </div>
-  {{ user }}
+  
+  <TitleHeader />
+  <h2>{{ user }}</h2>
   <RouterView  />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

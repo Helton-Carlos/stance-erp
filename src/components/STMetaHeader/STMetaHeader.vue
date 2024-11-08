@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { userLogin } from '../../stores/login';
 import { storeToRefs } from 'pinia';
 
-import {Status, Message} from '../../utils/message'
+import {Message} from '../../utils/message'
 
 const route = useRoute();
 const store = userLogin();

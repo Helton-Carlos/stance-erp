@@ -30,8 +30,7 @@ const routes = reactive([
             {{ route.name }}
           </router-link>
         </div>
-
-    
+        
         <n-button type="info">
           Configuração
         </n-button>

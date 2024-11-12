@@ -11,6 +11,7 @@ declare module 'vue' {
     Logo: typeof import('./src/components/Icons/Logo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    STChart: typeof import('./src/components/st-chart/STChart.vue')['default']
     STHeader: typeof import('./src/components/st-header/STHeader.vue')['default']
     STMetaHeader: typeof import('./src/components/st-meta-header/STMetaHeader.vue')['default']
   }

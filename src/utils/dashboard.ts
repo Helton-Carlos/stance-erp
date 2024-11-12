@@ -1,7 +1,8 @@
 import { reactive } from 'vue';
 import { PersonAddOutline, List, ServerOutline, AnalyticsOutline } from '@vicons/ionicons5';
+import { Card } from '../types/list-card.ts'
 
-export const dashboard = reactive<string[] | any>([
+export const dashboard = reactive<Card[]>([
   { 
     title: 'Cadastro de Clientes', 
     describe: 'Cadastre seus clientes de forma rápida.', 
@@ -52,6 +53,24 @@ export const dashboard = reactive<string[] | any>([
         type: 'secundary',
         title: 'Lista de vendas',
         path: '/lista-vendas', 
+        icon: List 
+      },
+    ]
+  },
+  { 
+    title: 'Estoque de produtos', 
+    describe: 'Organize seu estoque.', 
+    button: [
+      {
+        type: 'primary',
+        title: 'Controle estoque',
+        path: '/controle-estoque', 
+        icon: ServerOutline
+      },
+      {
+        type: 'secundary',
+        title: 'Lista de estoque',
+        path: '/lista-estoque', 
         icon: List 
       },
     ]

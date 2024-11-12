@@ -10,7 +10,7 @@ import { RouterView } from 'vue-router';
 
     <div class="w-80 mt-2">
       <STMetaHeader />
-      
+    
       <RouterView  />
     </div>
   </div>

@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { userLogin } from '../../stores/login';
 import { storeToRefs } from 'pinia';
 
-import {Message} from '../../utils/message'
+import { Message } from '../../utils/message'
 
 const route = useRoute();
 const store = userLogin();
@@ -23,7 +23,7 @@ const metaPath = computed(()=>{
 
 <template>
   <div>
-    <div class="flex space-between my-4">
+    <div class="flex space-between item-center my-4">
       <div>
         <h2>{{ metaPath.title }}</h2>
         <p class="text-normal">{{ metaPath.subtitle }}</p>

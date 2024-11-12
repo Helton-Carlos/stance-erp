@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import {RouterLink} from 'vue-router';
+import { RouterLink } from 'vue-router';
 
 const routes = reactive([
   { path: '/', name: 'index' },
@@ -17,8 +17,8 @@ const routes = reactive([
     <header class="bg-primary w-full">
       <div class="w-80 py-4 flex space-between item-center">
         <router-link to="/">
-          <h1 class="text-white">
-            logo
+          <h1>
+            <IconLogo />
           </h1>
         </router-link>
 

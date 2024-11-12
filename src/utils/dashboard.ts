@@ -48,6 +48,12 @@ export const dashboard = reactive<string[] | any>([
         path: '/minhas-vendas', 
         icon: AnalyticsOutline
       },
+      {
+        type: 'secundary',
+        title: 'Lista de vendas',
+        path: '/lista-vendas', 
+        icon: List 
+      },
     ]
   },
 ]);

@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from '../pages/Index.vue'
 import RegisterCustomer from '../pages/RegisterCustomer.vue'
-
 const routes = [
   {
     path: '/',

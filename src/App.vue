@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import {RouterView} from 'vue-router';
-import STHeader from './components/STHeader/STHeader.vue';
-import STMetaHeader from './components/STMetaHeader/STMetaHeader.vue';
 </script>
 
 <template>

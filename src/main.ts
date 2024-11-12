@@ -7,4 +7,4 @@ import naive from "naive-ui";
 
 const pinia = createPinia();
 
-createApp(App).use(router).use(pinia).use(naive).mount('#app')
+createApp(App).use(router).use(pinia).use(naive).mount('#app');

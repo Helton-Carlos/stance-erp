@@ -16,7 +16,7 @@ export const dashboard = reactive<Card[]>([
       {
         type: 'secundary',
         title: 'Lista de Clientes',
-        path: '/lista-cliente',
+        path: '/lista-de-clientes',
         icon: List 
       },
     ]

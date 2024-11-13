@@ -9,7 +9,8 @@ import { Message } from '../../utils/message'
 const route = useRoute();
 const store = userLogin();
 const { user } = storeToRefs(store);
-const value = ref<number>(5)
+const value = ref<number>(5);
+const alert = ref<boolean>(false);
 
 const metaPath = computed(()=>{
    const meta = {
@@ -17,7 +18,7 @@ const metaPath = computed(()=>{
     subtitle: route.meta.subtitle
   }
 
-  return meta
+  return meta;
 })
 </script>
 
@@ -43,9 +44,14 @@ const metaPath = computed(()=>{
       </n-space>
     </div>
 
-    <n-alert class="my-4" :title="Message.TittleWarning" type="warning">
+    <n-alert 
+      v-if="alert" 
+      class="my-4" 
+      :title="Message.TittleWarning" 
+      type="warning"
+    >
       <strong>Ler avisos é importante!</strong>
-      <br>Já está disponivel nova versão do seu pacote (v-1.1.1).
+      <br>Já está disponivel nova versão do seu pacote (V-1.1.1).
     </n-alert>
   </div>
 </template>

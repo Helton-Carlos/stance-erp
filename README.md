@@ -17,3 +17,5 @@ npm i
 ```bash
 npm run dev
 ```
+
+![stance](https://github.com/user-attachments/assets/75ec3170-beac-47a7-b404-ab1ee55f5d88)

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { userLogin } from '../../stores/login';
+import { userLogin } from '@/stores/login';
 import { storeToRefs } from 'pinia';
 
-import { Message } from '../../utils/message'
+import { Message } from '@/utils/message'
 
 const route = useRoute();
 const store = userLogin();

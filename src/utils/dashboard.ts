@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 import { PersonAddOutline, List, ServerOutline, AnalyticsOutline } from '@vicons/ionicons5';
-import { Card } from '../types/list-card.ts'
+import { Card } from '@/types/list-card.ts'
 
 export const dashboard = reactive<Card[]>([
   { 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { dashboard } from '../utils/dashboard.ts';
-import { loader } from '../utils/loader.ts';
+import { dashboard } from '@/utils/dashboard';
+import { loader } from '@/utils/loader';
 
 const loading = ref(true);
 

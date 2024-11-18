@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Index from '../pages/Index.vue';
-import RegisterCustomer from '../pages/st-page-register/RegisterCustomer.vue';
-import RegisterCustomerList from '../pages/st-page-register/RegisterCustomerList.vue';
+import Index from '@/pages/Index.vue';
+import RegisterCustomer from '@/pages/st-page-register/RegisterCustomer.vue';
+import RegisterCustomerList from '@/pages/st-page-register/RegisterCustomerList.vue';
 
 const routes = [
   {

@@ -17,7 +17,7 @@ startLoader()
     <div class="container">
       <div v-for="card in dashboard" :key="card.title">
         <n-card :title="card.title" class="card flex flex-wrap mb-4">
-          <n-skeleton v-if="loading" text :repeat="1" style="width: 100%" />
+          <n-skeleton v-if="loading" text :repeat="1" />
           <p v-else class="mb-2">{{ card.describe }}</p>
         
           <div class="flex gap-2 mt-2">
@@ -71,11 +71,13 @@ startLoader()
 
     <div class="container">
       <n-card title="Gráfico anual" class="card mb-4">
-        <STChart />
+        <n-skeleton v-if="loading" :repeat="30" />
+        <STChart v-else />
       </n-card>
 
       <n-card title="Gráfico anual" class="card mb-4">
-        <STChart />
+        <n-skeleton v-if="loading" :repeat="30" />
+        <STChart v-else />
       </n-card>
     </div>
   </div>

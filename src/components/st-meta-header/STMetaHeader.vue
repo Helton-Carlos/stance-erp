@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { userLogin } from '../../stores/login';
 import { storeToRefs } from 'pinia';
+import { ChevronBack } from '@vicons/ionicons5';
 
 import { Message } from '../../utils/message'
 
 const route = useRoute();
+const router = useRouter()
 const store = userLogin();
 const { user } = storeToRefs(store);
 const value = ref<number>(5);
@@ -20,14 +22,25 @@ const metaPath = computed(()=>{
 
   return meta;
 })
+
+function goBack() {
+  router.push("/")
+}
 </script>
 
 <template>
   <div>
     <div class="flex space-between item-center my-4">
       <div>
-        <h2>{{ metaPath.title }}</h2>
-        <p class="text-normal">{{ metaPath.subtitle }}</p>
+        <div class="flex gap-2">
+          <ChevronBack 
+            style="width: 20px; cursor: pointer;" 
+            @click="goBack"
+          />
+          
+          <h2>{{ metaPath.title }} {{user}}</h2>
+        </div>
+        <p class="text-normal pl-11">{{ metaPath.subtitle }}</p>
       </div>
 
       <n-space :size="24">

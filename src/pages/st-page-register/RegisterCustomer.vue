@@ -2,6 +2,15 @@
 import { ref } from 'vue';
 import type { FormInst } from 'naive-ui';
 import { Save, ArrowBack } from '@vicons/ionicons5';
+import { loader } from '../../utils/loader.ts';
+
+const loading = ref(true);
+
+const startLoader = async () => {
+  loading.value = await loader(1400); 
+};
+
+startLoader()
 
 const tema = ref<string>('Preencha o formulário');
 const size = ref<string>('large')
@@ -109,15 +118,22 @@ getCEP('01001000')
 
           <n-grid  class="mt-4" :span="24" :x-gap="24">
             <n-form-item-gi :span="12" label="Nome completo" path="inputName">
-              <n-input v-model:value="model.inputName" placeholder="ex: João Marinho Silva" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputName" placeholder="ex: João Marinho Silva" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Nome da mãe" path="inputNameMom">
-              <n-input v-model:value="model.inputNameMom" placeholder="ex: Maria de Lurdes Silva" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputNameMom" placeholder="ex: Maria de Lurdes Silva" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Sexo" path="selectValue">
+              <n-skeleton v-if="loading" text :repeat="1" />
+
               <n-select
+                v-else
                 v-model:value="model.selectValue"
                 placeholder="ex: Masculino"
                 :options="generalOptions"
@@ -125,36 +141,57 @@ getCEP('01001000')
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Idade" path="inputNumberValue">
-              <n-input-number v-model:value="model.inputNumberValue" placeholder="ex: 32" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input-number v-else v-model:value="model.inputNumberValue" placeholder="ex: 32" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Telefone" path="inputPhone">
-              <n-input v-model:value="model.inputPhone" placeholder="ex: (75)3281-7998" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputPhone" placeholder="ex: (75)3281-7998" />
             </n-form-item-gi>
             
             <n-form-item-gi :span="12" label="CEP" path="inputCep">
-              <n-input v-model:value="model.inputCep" placeholder="ex: 01001000" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputCep" placeholder="ex: 01001000" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Rua" path="inputStreet">
-              <n-input v-model:value="model.inputStreet" placeholder="ex: José Brito" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputStreet" placeholder="ex: José Brito" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Bairro" path="inputNeighborhood">
-              <n-input v-model:value="model.inputNeighborhood" placeholder="ex: Itapevi" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputNeighborhood" placeholder="ex: Itapevi" />
             </n-form-item-gi>
 
             <n-form-item-gi :span="12" label="Complemento" path="inputComplement">
-              <n-input v-model:value="model.inputComplement" placeholder="ex: Casa de esquina, Branca" />
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input v-else v-model:value="model.inputComplement" placeholder="ex: Casa de esquina, Branca" />
             </n-form-item-gi>
             
             <n-form-item-gi :span="12" label="Numero" path="inputNumberHouse">
-              <n-input-number v-model:value="model.inputNumberHouse" placeholder="ex: 15"/>
+              <n-skeleton v-if="loading" text :repeat="1" />
+
+              <n-input-number v-else v-model:value="model.inputNumberHouse" placeholder="ex: 15"/>
             </n-form-item-gi>
             
             <n-gi :span="12">
               <div style="display: flex; justify-content: flex-start" class="gap-4">
-                <n-button type="info" @click="handleValidateButtonClick">
+                <n-skeleton 
+                  v-if="loading" 
+                  :width="142" 
+                  :sharp="false" 
+                  size="medium"  
+                />
+
+                <n-button v-else type="info" @click="handleValidateButtonClick">
                   <template #icon>
                     <n-icon>
                       <Save />
@@ -163,7 +200,14 @@ getCEP('01001000')
                   Enviar
                 </n-button>
 
-                <router-link to="/">
+                <n-skeleton 
+                  v-if="loading" 
+                  :width="142" 
+                  :sharp="false" 
+                  size="medium"  
+                />
+
+                <router-link to="/" v-else>
                   <n-button  type="info" ghost>
                     <template #icon>
                       <n-icon>

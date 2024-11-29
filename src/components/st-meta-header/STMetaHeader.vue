@@ -23,6 +23,10 @@ const metaPath = computed(()=>{
   return meta;
 })
 
+const metaName = computed(()=>{
+  return String(route.meta) === 'Index';
+})
+
 function goBack() {
   router.push("/")
 }
@@ -37,8 +41,9 @@ function goBack() {
             style="width: 20px; cursor: pointer;" 
             @click="goBack"
           />
-          
-          <h2>{{ metaPath.title }} {{user}}</h2>
+          <h2>{{ metaPath.title }} 
+            <span v-if="metaName">{{user}}</span>
+          </h2>
         </div>
         <p class="text-normal pl-11">{{ metaPath.subtitle }}</p>
       </div>

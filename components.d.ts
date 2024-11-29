@@ -15,6 +15,7 @@ declare module 'vue' {
     STChat: typeof import('./src/components/st-chat/STChat.vue')['default']
     STHeader: typeof import('./src/components/st-header/STHeader.vue')['default']
     STMetaHeader: typeof import('./src/components/st-meta-header/STMetaHeader.vue')['default']
+    STPrint: typeof import('./src/components/st-print/STPrint.vue')['default']
     STTable: typeof import('./src/components/st-table/STTable.vue')['default']
   }
 }

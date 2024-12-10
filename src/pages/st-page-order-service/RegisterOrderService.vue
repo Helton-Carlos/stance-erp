@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { FormInst } from 'naive-ui';
-import { Save, Print, ArrowBack } from '@vicons/ionicons5';
-import STPrint from '../../components/st-print/STPrint.vue';
+import { Save, ArrowBack } from '@vicons/ionicons5';
 import { loader } from '../../utils/loader.ts';
 
 const loading = ref<boolean>(true);
 const tema = ref<string>('Preencha o formulário');
 const size = ref<string>('large');
 const formRef = ref<FormInst | null>(null);
-const infoPrinter = ref<any>(null);
-const showPrinter = ref<boolean>(false);
-const printer = ref<InstanceType<typeof STPrint> | null>(null);
-
-const coll = [
-  'Stance',
-  'Formulário'
-]
 
 const model = ref({
   selectValueClient: null,
@@ -106,52 +97,6 @@ function handleValidateButtonClick(e: MouseEvent) {
     }
   })
 }
-
-function Printer() {
-  const {
-    selectValueClient,
-    selectValuePay,
-    inputUnit,
-    inputDataInit,
-    inputDelivery,
-    inputNameService,
-    inputPhone,
-    inputComplement,
-    selectValueWorker,
-  } = model.value;
-
-  const info = {
-    'Nome do cliente': selectValueClient,
-    'Status de pagamento': selectValuePay,
-    'Unidade(s)': inputUnit,
-    'Data do serviço': inputDataInit,
-    'Data de entrega': inputDelivery,
-    'Nome do serviço': inputNameService,
-    'Telefone': inputPhone,
-    'Observação': inputComplement,
-    'Nome do colaborador': selectValueWorker,
-  };
-
-  infoPrinter.value = info;
-  showPrinter.value = true;
-
-  if (printer.value && model.value) {
-    const element = printer.value.$el.cloneNode(true) as HTMLElement;
-
-    element.classList.add('printable');
-
-    document.body.appendChild(element);
-    document.body.classList.add('printing');
-    
-    setTimeout(() => {
-      window.print();
-      document.body.removeChild(element);
-      document.body.classList.remove('printing'); 
-      
-      showPrinter.value = false;
-    }, 5000);
-  } 
-};
 
 const startLoader = async () => {
   loading.value = await loader(1400); 
@@ -271,26 +216,6 @@ startLoader();
                   size="medium"  
                 />
 
-                <n-button 
-                  v-else 
-                  type="primary" 
-                  @click="Printer"
-                >
-                  <template #icon>
-                    <n-icon>
-                      <Print />
-                    </n-icon>
-                  </template>
-                  Imprimir
-                </n-button>
-
-                <n-skeleton 
-                  v-if="loading" 
-                  :width="142" 
-                  :sharp="false" 
-                  size="medium"  
-                />
-
                 <router-link to="/" v-else>
                   <n-button  type="info" ghost>
                     <template #icon>
@@ -306,13 +231,6 @@ startLoader();
           </n-grid>
         </n-form>
     </n-card>
-
-    <STPrint
-      v-if="showPrinter"
-      ref="printer"
-      :coll="coll" 
-      :rows="infoPrinter"
-    />
   </div>
 </template>
 

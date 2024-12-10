@@ -2,6 +2,7 @@
 import { reactive } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useRoute } from 'vue-router';
+import { Options } from '@vicons/ionicons5';
 
 const routePath = useRoute();
 
@@ -41,6 +42,11 @@ const routes = reactive([
         
         <router-link to="/config">
           <n-button type="info">
+            <template #icon>
+              <n-icon>
+                <Options />
+              </n-icon>
+            </template>
             Configuração
           </n-button>
         </router-link>

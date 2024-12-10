@@ -24,7 +24,7 @@ const metaPath = computed(()=>{
 })
 
 const metaName = computed(()=>{
-  return String(route.meta) === 'Index';
+  return String(route.name) === 'Index';
 })
 
 function goBack() {
@@ -38,14 +38,19 @@ function goBack() {
       <div>
         <div class="flex gap-2">
           <ChevronBack 
+            v-if="!metaName"
             style="width: 20px; cursor: pointer;" 
             @click="goBack"
           />
+
           <h2>{{ metaPath.title }} 
             <span v-if="metaName">{{user}}</span>
           </h2>
         </div>
-        <p class="text-normal pl-11">{{ metaPath.subtitle }}</p>
+
+        <p :class="['text-normal', metaName ? '' : 'pl-11']">
+          {{ metaPath.subtitle }}
+        </p>
       </div>
 
       <n-space :size="24">
@@ -69,6 +74,7 @@ function goBack() {
       type="warning"
     >
       <strong>Ler avisos é importante!</strong>
+
       <br>Já está disponivel nova versão do seu pacote (V-1.1.1).
     </n-alert>
   </div>

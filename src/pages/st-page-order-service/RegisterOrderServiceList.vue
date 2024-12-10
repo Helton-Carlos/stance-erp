@@ -10,7 +10,7 @@ const startLoader = async () => {
 
 startLoader()
 
-const title = ref<string>('Lista de Clientes');
+const title = ref<string>('Lista de Ordem de serviço');
 </script>
 
 <template>

@@ -44,7 +44,7 @@ const routes = [
   },
   {
     path: '/lista-cadastrar-ordem-servico',
-    name: 'RegisterCustomerList',
+    name: 'RegisterOrderServiceList',
     component: RegisterOrderServiceList,
     meta: {
       title: 'Lista de Ordem de Serviço',

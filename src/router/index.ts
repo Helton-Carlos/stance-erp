@@ -4,6 +4,10 @@ import RegisterCustomer from '../pages/st-page-register/RegisterCustomer.vue';
 import RegisterCustomerList from '../pages/st-page-register/RegisterCustomerList.vue';
 import RegisterOrderService from '../pages/st-page-order-service/RegisterOrderService.vue';
 import RegisterOrderServiceList from '../pages/st-page-order-service/RegisterOrderServiceList.vue';
+import YourSales from '../pages/st-page-your-sales/YourSales.vue';
+import YourSalesList from '../pages/st-page-your-sales/YourSalesList.vue';
+import ControlStock from '../pages/st-page-stock/ControlStock.vue';
+import StockList from '../pages/st-page-stock/StockList.vue'
 
 const routes = [
   {
@@ -49,6 +53,42 @@ const routes = [
     meta: {
       title: 'Lista de Ordem de Serviço',
       subtitle: 'Lista de Ordem de Serviço cadastradas no sistema.',
+    }
+  },
+  {
+    path: '/minhas-vendas',
+    name: 'YourSales',
+    component: YourSales,
+    meta: {
+      title: 'Dashboard de Vendas',
+      subtitle: 'Veja suas estatisticas de vendas.',
+    }
+  },
+  {
+    path: '/lista-vendas',
+    name: 'YourSalesList',
+    component: YourSalesList,
+    meta: {
+      title: 'Lista de Ordem de Serviço',
+      subtitle: 'Lista de vendas.',
+    }
+  },
+  {
+    path: '/controle-estoque',
+    name: 'ControlStock',
+    component: ControlStock,
+    meta: {
+      title: 'Dashboard Controle de Estoque',
+      subtitle: 'Veja seu estoque.',
+    }
+  },
+  {
+    path: '/lista-estoque',
+    name: 'StockList',
+    component: StockList,
+    meta: {
+      title: 'Lista de Estoque',
+      subtitle: 'Estoque ativos.',
     }
   },
 ]

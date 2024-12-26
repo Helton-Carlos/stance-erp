@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { FormInst } from 'naive-ui';
-import { Save, ArrowBack } from '@vicons/ionicons5';
 import { loader } from '../../utils/loader.ts';
 
 const loading = ref(true);

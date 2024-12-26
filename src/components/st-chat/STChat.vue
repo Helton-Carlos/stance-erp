@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 import { ref } from 'vue';
-import { Chat } from '@chat-ui/vue3';
 
 const data = ref([
   { 

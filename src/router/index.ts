@@ -7,7 +7,8 @@ import RegisterOrderServiceList from '../pages/st-page-order-service/RegisterOrd
 import YourSales from '../pages/st-page-your-sales/YourSales.vue';
 import YourSalesList from '../pages/st-page-your-sales/YourSalesList.vue';
 import ControlStock from '../pages/st-page-stock/ControlStock.vue';
-import StockList from '../pages/st-page-stock/StockList.vue'
+import StockList from '../pages/st-page-stock/StockList.vue';
+import Construction from '../pages/st-construction/Construction.vue';
 
 const routes = [
   {
@@ -89,6 +90,42 @@ const routes = [
     meta: {
       title: 'Lista de Estoque',
       subtitle: 'Estoque ativos.',
+    }
+  },
+  {
+    path: '/empresa',
+    name: 'Work',
+    component: Construction,
+    meta: {
+      title: 'Stance ERP',
+      subtitle: 'Empresa de gestão e gerenciamento.',
+    }
+  },
+  {
+    path: '/servicos',
+    name: 'Services',
+    component: Construction,
+    meta: {
+      title: 'Stance ERP',
+      subtitle: 'Empresa de gestão e gerenciamento.',
+    }
+  },
+  {
+    path: '/planos',
+    name: 'Flat',
+    component: Construction,
+    meta: {
+      title: 'Stance ERP',
+      subtitle: 'Empresa de gestão e gerenciamento.',
+    }
+  },
+  {
+    path: '/contato',
+    name: 'Contact',
+    component: Construction,
+    meta: {
+      title: 'Stance ERP',
+      subtitle: 'Empresa de gestão e gerenciamento.',
     }
   },
 ]

@@ -9,6 +9,7 @@ import YourSalesList from '../pages/st-page-your-sales/YourSalesList.vue';
 import ControlStock from '../pages/st-page-stock/ControlStock.vue';
 import StockList from '../pages/st-page-stock/StockList.vue';
 import Construction from '../pages/st-construction/Construction.vue';
+import NotFoundPage from '../pages/st-not-found-page/NotFoundPage.vue'
 
 const routes = [
   {
@@ -128,6 +129,14 @@ const routes = [
       subtitle: 'Empresa de gestão e gerenciamento.',
     }
   },
+  { 
+    path: '/:pathMatch(.*)', 
+    component: NotFoundPage,
+    meta: {
+      title: 'Stance ERP',
+      subtitle: 'Página não encontrada.',
+    }
+  }
 ]
 
 const router = createRouter({

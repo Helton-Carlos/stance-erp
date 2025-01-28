@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { userLogin } from '../../stores/login';
+import { userLogin } from '@stores/login';
 import { storeToRefs } from 'pinia';
 import { ChevronBack } from '@vicons/ionicons5';
 
-import { Message } from '../../utils/message'
+import { Message } from '@utils/message'
 
 const route = useRoute();
 const router = useRouter()

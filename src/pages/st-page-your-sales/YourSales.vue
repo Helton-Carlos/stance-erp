@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { loader } from '../../utils/loader.ts';
+import { loader } from '@utils/loader.ts';
 
 const loading = ref(true);
 

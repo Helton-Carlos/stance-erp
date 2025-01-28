@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { FormInst } from 'naive-ui';
-import { loader } from '../../utils/loader.ts';
+import { loader } from '@utils/loader.ts';
 
 const loading = ref<boolean>(true);
 const tema = ref<string>('Preencha o formulário');

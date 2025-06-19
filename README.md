@@ -1,8 +1,8 @@
-# Vue3, Typescript, Tauri e Biblioteca adicionais.
+# Vue3, Typescript e Biblioteca adicionais.
 
 **💬 About.** 
 
-Stance, Projeto ERP: Vue3, Typescript, Tauri e Biblioteca adicionais.
+Stance, Projeto ERP: Vue3, Typescript e Biblioteca adicionais.
 
 **👇 Follow the steps.** 
 
@@ -23,5 +23,5 @@ npm run dev
 https://dev.to/heltonbrito/vue-3-e-naive-ui-1o5d
 ```
 
+![image](https://github.com/user-attachments/assets/7a058192-b906-42c7-9a45-e8b03fa16c23)
 
-![stance](https://github.com/user-attachments/assets/75ec3170-beac-47a7-b404-ab1ee55f5d88)

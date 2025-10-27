@@ -1,17 +1,24 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { computed } from "vue";
+import { RouterView, useRoute } from "vue-router";
+
+const router = useRoute();
+
+const onLogin = computed(() => router.path === "/login");
 </script>
 
 <template>
   <div>
     <div>
-      <STHeader />
+      <STHeader v-if="!onLogin" />
     </div>
 
     <div class="w-80 mt-2">
-      <STMetaHeader />
-      <STChat />
-    
+      <div v-if="!onLogin">
+        <STMetaHeader />
+        <STChat />
+      </div>
+
       <transition name="fade" mode="out-in">
         <RouterView />
       </transition>
@@ -20,14 +27,15 @@ import { RouterView } from 'vue-router';
 </template>
 
 <style lang="scss">
-  @use "./assets/scss/global.scss";
+@use "./assets/scss/global.scss";
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s ease;
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
 
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

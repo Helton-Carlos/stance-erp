@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { useLoginStore } from "@stores/login";
 import Index from "../pages/Index.vue";
 import RegisterCustomer from "../pages/st-page-register/RegisterCustomer.vue";
 import RegisterCustomerList from "../pages/st-page-register/RegisterCustomerList.vue";
@@ -151,8 +152,13 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== "Login") next({ name: "Login" });
-  else next();
+  const { validationUser } = useLoginStore();
+
+  if (to.name !== "Login" && !validationUser) {
+    next({ name: "Login" });
+  } else {
+    next();
+  }
 });
 
 export default router;

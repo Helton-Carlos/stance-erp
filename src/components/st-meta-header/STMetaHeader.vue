@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import { userLogin } from '@stores/login';
-import { storeToRefs } from 'pinia';
-import { ChevronBack } from '@vicons/ionicons5';
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useLoginStore } from "@stores/login";
+import { storeToRefs } from "pinia";
+import { ChevronBack } from "@vicons/ionicons5";
 
-import { Message } from '@utils/message'
+import { Message } from "@utils/message";
 
 const route = useRoute();
-const router = useRouter()
-const store = userLogin();
+const router = useRouter();
+const store = useLoginStore();
 const { user } = storeToRefs(store);
 const value = ref<number>(5);
 const alert = ref<boolean>(false);
 
-const metaPath = computed(()=>{
-   const meta = {
+const metaPath = computed(() => {
+  const meta = {
     title: route.meta.title,
-    subtitle: route.meta.subtitle
-  }
+    subtitle: route.meta.subtitle,
+  };
 
   return meta;
-})
+});
 
-const metaName = computed(()=>{
-  return String(route.name) === 'Index';
-})
+const metaName = computed(() => {
+  return String(route.name) === "Index";
+});
 
 function goBack() {
-  router.push("/")
+  router.push("/");
 }
 </script>
 
@@ -37,14 +37,15 @@ function goBack() {
     <div class="flex space-between item-center my-4">
       <div>
         <div class="flex gap-2">
-          <ChevronBack 
+          <ChevronBack
             v-if="!metaName"
-            style="width: 20px; cursor: pointer;" 
+            style="width: 20px; cursor: pointer"
             @click="goBack"
           />
 
-          <h2>{{ metaPath.title }} 
-            <span v-if="metaName">{{user}}</span>
+          <h2>
+            {{ metaPath.title }}
+            <span v-if="metaName">{{ user }}</span>
           </h2>
         </div>
 
@@ -63,19 +64,19 @@ function goBack() {
           >
             {{ user }}
           </n-avatar>
-        </n-badge>   
+        </n-badge>
       </n-space>
     </div>
 
-    <n-alert 
-      v-if="alert" 
-      class="my-4" 
-      :title="Message.TittleWarning" 
+    <n-alert
+      v-if="alert"
+      class="my-4"
+      :title="Message.TittleWarning"
       type="warning"
     >
       <strong>Ler avisos é importante!</strong>
 
-      <br>Já está disponivel nova versão do seu pacote (V-1.1.1).
+      <br />Já está disponivel nova versão do seu pacote (V-1.1.1).
     </n-alert>
   </div>
 </template>

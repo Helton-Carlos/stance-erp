@@ -150,4 +150,9 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  if (to.name !== "Login") next({ name: "Login" });
+  else next();
+});
+
 export default router;

@@ -4,7 +4,7 @@ import { RouterView, useRoute } from "vue-router";
 
 const router = useRoute();
 
-const onLogin = computed(() => router.path === "/login");
+const onLogin = computed(() => router.name === "Login");
 </script>
 
 <template>

@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useLoginStore } from "@stores/login";
-import Index from "../pages/Index.vue";
-import RegisterCustomer from "../pages/st-page-register/RegisterCustomer.vue";
-import RegisterCustomerList from "../pages/st-page-register/RegisterCustomerList.vue";
-import RegisterOrderService from "../pages/st-page-order-service/RegisterOrderService.vue";
-import RegisterOrderServiceList from "../pages/st-page-order-service/RegisterOrderServiceList.vue";
-import YourSales from "../pages/st-page-your-sales/YourSales.vue";
-import YourSalesList from "../pages/st-page-your-sales/YourSalesList.vue";
-import ControlStock from "../pages/st-page-stock/ControlStock.vue";
-import StockList from "../pages/st-page-stock/StockList.vue";
-import Construction from "../pages/st-construction/Construction.vue";
-import Login from "../pages/st-page-login/Login.vue";
-import NotFoundPage from "../pages/st-not-found-page/NotFoundPage.vue";
+import Index from "@pages/Index.vue";
+import RegisterCustomer from "@pages/st-page-register/RegisterCustomer.vue";
+import RegisterCustomerList from "@pages/st-page-register/RegisterCustomerList.vue";
+import RegisterOrderService from "@pages/st-page-order-service/RegisterOrderService.vue";
+import RegisterOrderServiceList from "@pages/st-page-order-service/RegisterOrderServiceList.vue";
+import YourSales from "@pages/st-page-your-sales/YourSales.vue";
+import YourSalesList from "@pages/st-page-your-sales/YourSalesList.vue";
+import ControlStock from "@pages/st-page-stock/ControlStock.vue";
+import StockList from "@pages/st-page-stock/StockList.vue";
+import Construction from "@pages/st-construction/Construction.vue";
+import Login from "@pages/st-page-login/Login.vue";
+import NotFoundPage from "@pages/st-not-found-page/NotFoundPage.vue";
 
 const routes = [
   {
